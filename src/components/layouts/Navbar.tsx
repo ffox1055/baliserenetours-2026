@@ -33,7 +33,7 @@ export function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:text-primary transition-colors duration-200"
+                  className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:text-primary transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
@@ -61,7 +61,7 @@ export function Navbar() {
       {/* Backdrop */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`md:hidden fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-60 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -71,7 +71,7 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden fixed top-0 right-0 z-[70] h-full w-4/5 max-w-sm bg-beige shadow-2xl flex flex-col font-serif transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-0 right-0 z-70 h-full w-4/5 max-w-sm bg-beige shadow-2xl flex flex-col font-serif transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
