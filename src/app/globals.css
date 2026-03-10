@@ -20,6 +20,36 @@
     @apply max-w-[118rem] mx-auto w-[82.5%];
   }
 
+  .interactive-surface {
+    @apply border border-primary/50 rounded-lg shadow-primary-dark shadow-xl/20 transition-all duration-300 ease-out;
+  }
+
+  .interactive-surface-hover {
+    @apply transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-primary-dark hover:shadow-xl/35 focus-within:-translate-y-0.5 focus-within:shadow-primary-dark focus-within:shadow-xl/35 focus-visible:-translate-y-0.5 focus-visible:shadow-primary-dark focus-visible:shadow-xl/35;
+  }
+
+  .interactive-link {
+    @apply relative inline-flex items-center text-primary-dark transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-beige;
+  }
+
+  .interactive-link:hover {
+    @apply text-primary;
+  }
+
+  .interactive-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300;
+  }
+
+  .interactive-link:hover::after,
+  .interactive-link:focus-visible::after {
+    @apply w-full;
+  }
+
+  .interactive-ghost {
+    @apply rounded-md transition-colors duration-200 hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-beige;
+  }
+
   .testimonial-quote {
     @apply italic text-center;
   }

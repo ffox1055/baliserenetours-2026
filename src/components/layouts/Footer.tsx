@@ -19,13 +19,19 @@ export function Footer() {
 
         <ul className="flex flex-col items-center gap-3 text-sm font-serif md:flex-row md:justify-between md:gap-0 md:text-base">
           <li>
-            <Link href="#">Airport Transfers</Link>
+            <Link href="#" className="interactive-link">
+              Airport Transfers
+            </Link>
           </li>
           <li>
-            <Link href="#">Daily Car Rentals</Link>
+            <Link href="#" className="interactive-link">
+              Daily Car Rentals
+            </Link>
           </li>
           <li>
-            <Link href="#">Contact Us</Link>
+            <Link href="#" className="interactive-link">
+              Contact Us
+            </Link>
           </li>
         </ul>
 

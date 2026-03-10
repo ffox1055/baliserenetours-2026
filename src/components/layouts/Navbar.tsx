@@ -33,14 +33,14 @@ export function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:text-primary transition-colors duration-200"
+                  className="interactive-link"
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
                 href="#"
-                className="bg-primary px-4 py-2 rounded-md text-white hover:bg-primary-dark transition-colors duration-200"
+                className="interactive-surface-hover inline-flex items-center justify-center rounded-md border border-primary bg-primary px-4 py-2 text-white shadow-sm hover:bg-primary-dark hover:border-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-beige"
               >
                 Book Now
               </Link>
@@ -48,7 +48,7 @@ export function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden text-primary-dark p-2 rounded-md hover:bg-primary/10 transition-colors duration-200"
+              className="interactive-ghost md:hidden text-primary-dark p-2"
               onClick={() => setIsOpen(true)}
               aria-label="Open menu"
             >
@@ -82,7 +82,7 @@ export function Navbar() {
           </span>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 rounded-md text-primary-dark hover:bg-primary/10 transition-colors duration-200"
+            className="interactive-ghost p-2 text-primary-dark"
             aria-label="Close menu"
           >
             <X size={24} />
@@ -96,7 +96,7 @@ export function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="py-3 px-3 rounded-md text-lg hover:bg-primary/10 hover:text-primary transition-colors duration-200"
+              className="interactive-ghost py-3 px-3 text-lg"
             >
               {link.label}
             </Link>
@@ -105,7 +105,7 @@ export function Navbar() {
             <Link
               href="#"
               onClick={() => setIsOpen(false)}
-              className="block bg-primary px-4 py-3 rounded-md text-white text-center text-lg hover:bg-primary-dark transition-colors duration-200"
+              className="interactive-surface-hover block border border-primary bg-primary px-4 py-3 rounded-md text-white text-center text-lg shadow-sm hover:bg-primary-dark hover:border-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-beige"
             >
               Book Now
             </Link>

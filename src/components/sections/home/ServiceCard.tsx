@@ -43,7 +43,7 @@ export function ServiceCard() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="border border-primary/50 rounded-lg shadow-primary-dark shadow-xl/20 p-8 hover:shadow-xl/40 transition-shadow duration-300"
+              className="interactive-surface interactive-surface-hover p-8"
             >
               <div className="w-25 h-25 bg-primary/20 rounded-full float-left mr-4"></div>
               <div className="space-y-4">
