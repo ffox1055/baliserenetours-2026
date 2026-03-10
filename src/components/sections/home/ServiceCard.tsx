@@ -1,6 +1,16 @@
+"use client";
+
+import { motion, useReducedMotion } from "motion/react";
 import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
+import {
+  cardHover,
+  fadeUp,
+  staggerContainer,
+  staggerItem,
+  viewportOnce,
+} from "@/lib/motion";
 
 const services = [
   {
@@ -32,18 +42,33 @@ const services = [
 ];
 
 export function ServiceCard() {
-  return (
-    <section>
-      <div className="layout py-16 xl:px-16">
-        <h2 className="text-primary-dark font-serif text-center mb-16">
-          Choose Your Travel Needs
-        </h2>
+  const reducedMotion = useReducedMotion();
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={fadeUp(!!reducedMotion)}
+    >
+      <div className="layout py-16 xl:px-16">
+        <motion.h2
+          className="text-primary-dark font-serif text-center mb-16"
+          variants={staggerItem(!!reducedMotion)}
+        >
+          Choose Your Travel Needs
+        </motion.h2>
+
+        <motion.div
+          className="grid grid-cols-1 xl:grid-cols-2 gap-8"
+          variants={staggerContainer(!!reducedMotion, 0.12, 0.06)}
+        >
           {services.map((service) => (
-            <div
+            <motion.div
               key={service.title}
               className="interactive-surface interactive-surface-hover p-8"
+              variants={staggerItem(!!reducedMotion)}
+              whileHover={cardHover(!!reducedMotion)}
             >
               <div className="w-25 h-25 bg-primary/20 rounded-full float-left mr-4"></div>
               <div className="space-y-4">
@@ -61,10 +86,10 @@ export function ServiceCard() {
                   {service.cta}
                 </Button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
