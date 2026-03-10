@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
-  { label: "Airport Transfers", href: "#" },
-  { label: "Daily Rental", href: "#" },
+  { label: "Airport Transfers", href: "/airport-transfer" },
+  { label: "Daily Rental", href: "/daily-rental" },
 ];
 
 export function Navbar() {
