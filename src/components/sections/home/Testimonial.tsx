@@ -1,0 +1,36 @@
+export function Testimonial() {
+  return (
+    <section>
+      <div className="layout py-16 xl:px-16">
+        <h2 className="mb-10 sm:mb-16 font-serif text-center">
+          Book in 3 Simple Steps
+        </h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          {/* review */}
+          <div className="bg-beige shadow-primary-dark shadow-xl/20 p-8 rounded-lg space-y-4 border-primary-dark/10 border">
+            <p className="testimonial-quote text-xl">
+              The pickup was smooth and the driver was extremely friendly.
+              Perfect start to our Bali trip.
+            </p>
+
+            <p className="text-center">Emma, Australia</p>
+          </div>
+          {/* cta */}
+          <div className="py-6 px-6 sm:px-8 lg:px-12 shadow-primary-dark shadow-xl/20 bg-primary rounded-lg flex flex-col items-center justify-center space-y-6 sm:space-y-8 font-serif">
+            <h4 className="text-white">Ready for Serene Bali Experience?</h4>
+
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full justify-center">
+              <button className="border-beige border px-4 sm:px-8 py-2 rounded-sm bg-beige text-primary-dark shadow-sm text-base sm:text-xl cursor-pointer w-full sm:w-auto">
+                Book Airport Transfer
+              </button>
+              <button className="border-beige border px-4 sm:px-8 py-2 rounded-sm bg-primary text-white shadow-sm text-base sm:text-xl cursor-pointer w-full sm:w-auto">
+                Rent a Car Today
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

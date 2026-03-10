@@ -26,9 +26,6 @@ export function Navbar() {
               >
                 Book Now
               </Link>
-              <button>
-                <Menu className="text-primary" />
-              </button>
             </div>
           </div>
         </nav>
