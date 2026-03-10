@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/Button";
+
 export function Testimonial() {
   return (
     <section>
@@ -9,7 +11,7 @@ export function Testimonial() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* review */}
           <div className="bg-beige shadow-primary-dark shadow-xl/20 p-8 rounded-lg space-y-4 border-primary-dark/10 border">
-            <p className="testimonial-quote text-xl">
+            <p className="testimonial-quote md:text-xl">
               The pickup was smooth and the driver was extremely friendly.
               Perfect start to our Bali trip.
             </p>
@@ -21,12 +23,22 @@ export function Testimonial() {
             <h4 className="text-white">Ready for Serene Bali Experience?</h4>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full justify-center">
-              <button className="border-beige border px-4 sm:px-8 py-2 rounded-sm bg-beige text-primary-dark shadow-sm text-base sm:text-xl cursor-pointer w-full sm:w-auto">
+              <Button
+                variant="beige"
+                size="compact"
+                fullWidth
+                className="sm:w-auto"
+              >
                 Book Airport Transfer
-              </button>
-              <button className="border-beige border px-4 sm:px-8 py-2 rounded-sm bg-primary text-white shadow-sm text-base sm:text-xl cursor-pointer w-full sm:w-auto">
+              </Button>
+              <Button
+                variant="inverse"
+                size="compact"
+                fullWidth
+                className="sm:w-auto"
+              >
                 Rent a Car Today
-              </button>
+              </Button>
             </div>
           </div>
         </div>
