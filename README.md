@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Baliserenetours
 
-## Getting Started
+Baliserenetours is a modern web application offering premium airport transfers, daily car rentals, and guided tours across Bali.
 
-First, run the development server:
+## Tech Stack
+
+This project is built using the **TALL+I stack** (Tailwind, Alpine, Laravel, Livewire + Inertia), tailored specifically towards a React-driven seamless SPA experience using the latest ecosystem versions:
+
+- **Backend:** [Laravel 12](https://laravel.com) (PHP 8.4+)
+- **Frontend Stack:** [React 19](https://react.dev) + [Inertia.js v2](https://inertiajs.com)
+- **Styling & UI:** [Tailwind CSS v4](https://tailwindcss.com), [Framer Motion](https://motion.dev/), [Lucide React](https://lucide.dev)
+- **Administration:** [Filament v5](https://filamentphp.com) (Admin Panel / Server-Driven UI)
+- **Code Formatting:** Laravel Pint (PHP), Prettier (JS/CSS)
+
+## Key Features
+
+- **Modern SPA Experience:** Powered by Inertia.js v2, offering features like deferred props, prefetching, and infinite scrolling.
+- **SEO Optimized:** Fully integrated SEO infrastructure, meta tags, and schema.org strictly typed JSON-LD.
+- **Dynamic Content & Pricing:** Components built out for easily updating features, services, and dynamic pricing models.
+- **Server-Driven Admin (Filament):** Extensive use of Filament v5 providing powerful administration configurations for models.
+
+## Development Setup
+
+To get started with local development, follow the steps below:
+
+### Prerequisites
+
+- PHP 8.4+
+- Composer
+- Node.js & npm/yarn/pnpm
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone <repository-url>
+   cd inertia-bst
+   ```
+
+2. **Install PHP dependencies:**
+
+   ```bash
+   composer install
+   ```
+
+3. **Install NPM dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Environment Setup:**
+
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+   > Ensure you configure your database settings in the `.env` file before proceeding.
+
+5. **Run Migrations (and seeders):**
+
+   ```bash
+   php artisan migrate --seed
+   ```
+
+6. **Start the Development Servers:**
+   This project leverages Laravel's integrated Vite setup.
+   ```bash
+   npm run dev
+   # In a separate terminal or using Laravel concurrency (if set up):
+   php artisan serve
+   ```
+
+## Code Standards
+
+- **PHP:** Format the PHP code using Laravel Pint before pushing:
+  ```bash
+  vendor/bin/pint --dirty --format agent
+  ```
+- **JS/CSS:** Prettier is configured for the frontend assets (including Tailwind v4 plugins).
+
+## Testing
+
+This project strictly enforces tests. To run tests suites:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+php artisan test --compact
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Pest test runner is configured and PHPUnit is actively used covering edge cases and regular functionality.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+_Created and maintained with Laravel Boost guidelines and modern web standards in mind._
