@@ -9,9 +9,13 @@ import {
   staggerItem,
   viewportOnce,
 } from "@/lib/motion";
-import { vehicles, type Vehicle } from "./data";
+import type { Vehicle } from "./data";
 
-export function Vehicles() {
+interface VehiclesProps {
+  vehicles: Vehicle[];
+}
+
+export function Vehicles({ vehicles }: VehiclesProps) {
   const reducedMotion = useReducedMotion();
 
   return (

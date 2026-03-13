@@ -10,9 +10,13 @@ import {
   viewportOnce,
 } from "@/lib/motion";
 import { cn } from "@/lib/utils";
-import { pricingPlans, type PricingPlan } from "./data";
+import type { PricingPlan } from "./data";
 
-export function Pricing() {
+interface PricingProps {
+  pricingPlans: PricingPlan[];
+}
+
+export function Pricing({ pricingPlans }: PricingProps) {
   const reducedMotion = useReducedMotion();
 
   return (
@@ -63,7 +67,7 @@ function PricingCard({
   plan: PricingPlan;
   reducedMotion: boolean;
 }) {
-  const isPopular = plan.popular;
+  const isPopular = plan.is_popular;
 
   return (
     <motion.div

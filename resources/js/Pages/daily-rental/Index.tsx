@@ -1,12 +1,18 @@
 import { Layout } from "@/components/layouts/Layout";
 import { SeoHead } from "@/components/layouts/SeoHead";
 import { CTA } from "@/components/sections/daily-rental/CTA";
+import type { RentalPackage, Vehicle } from "@/components/sections/daily-rental/data";
 import { Features } from "@/components/sections/daily-rental/Features";
 import { Hero } from "@/components/sections/daily-rental/Hero";
 import { Packages } from "@/components/sections/daily-rental/Packages";
 import { Vehicles } from "@/components/sections/daily-rental/Vehicles";
 
-export default function DailyRental() {
+interface DailyRentalProps {
+  vehicles: Vehicle[];
+  rentalPackages: RentalPackage[];
+}
+
+export default function DailyRental({ vehicles, rentalPackages }: DailyRentalProps) {
   return (
     <>
       <SeoHead
@@ -18,8 +24,8 @@ export default function DailyRental() {
       <Layout>
         <Hero />
         <Features />
-        <Vehicles />
-        <Packages />
+        <Vehicles vehicles={vehicles} />
+        <Packages rentalPackages={rentalPackages} />
         <CTA />
       </Layout>
     </>

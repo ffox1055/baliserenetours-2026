@@ -10,9 +10,13 @@ import {
   viewportOnce,
 } from "@/lib/motion";
 import { cn } from "@/lib/utils";
-import { rentalPackages, type RentalPackage } from "./data";
+import type { RentalPackage } from "./data";
 
-export function Packages() {
+interface PackagesProps {
+  rentalPackages: RentalPackage[];
+}
+
+export function Packages({ rentalPackages }: PackagesProps) {
   const reducedMotion = useReducedMotion();
 
   return (
@@ -63,7 +67,7 @@ function PackageCard({
   pkg: RentalPackage;
   reducedMotion: boolean;
 }) {
-  const isPopular = pkg.popular;
+  const isPopular = pkg.is_popular;
 
   return (
     <motion.div

@@ -10,13 +10,14 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 export interface PricingPlan {
-  id: string;
+  id: number;
   title: string;
   description: string;
   price: number;
   duration: string;
   includes: string[];
-  popular: boolean;
+  is_popular: boolean;
+  is_active: boolean;
 }
 
 export interface ServiceFeature {
@@ -24,57 +25,6 @@ export interface ServiceFeature {
   title: string;
   description: string;
 }
-
-export const pricingPlans: PricingPlan[] = [
-  {
-    id: "1",
-    title: "Standard Airport Transfer",
-    description:
-      "Reliable transportation from/to Ngurah Rai Airport with professional driver",
-    price: 25,
-    duration: "45-60 minutes",
-    includes: [
-      "Professional driver",
-      "Air-conditioned vehicle",
-      "Flight monitoring",
-      "24/7 support",
-    ],
-    popular: false,
-  },
-  {
-    id: "2",
-    title: "VIP Airport Transfer",
-    description:
-      "Premium service with luxury vehicle and personalized assistance",
-    price: 45,
-    duration: "45-60 minutes",
-    includes: [
-      "Professional driver",
-      "Luxury vehicle",
-      "Personal assistant",
-      "Welcome drink",
-      "Priority service",
-    ],
-    popular: true,
-  },
-  {
-    id: "3",
-    title: "Executive Group Transfer",
-    description:
-      "Spacious vehicle for families or groups, with extra luggage space and meet & greet service",
-    price: 65,
-    duration: "45-60 minutes",
-    includes: [
-      "Professional driver",
-      "Spacious SUV/minivan",
-      "Extra luggage space",
-      "Meet & greet",
-      "Complimentary WiFi",
-      "Child seat available",
-    ],
-    popular: false,
-  },
-];
 
 export const serviceFeatures: ServiceFeature[] = [
   {
