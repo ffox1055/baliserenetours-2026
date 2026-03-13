@@ -1,11 +1,16 @@
 import { Layout } from "@/components/layouts/Layout";
 import { SeoHead } from "@/components/layouts/SeoHead";
 import { CTA } from "@/components/sections/airport-transfer/CTA";
+import type { PricingPlan } from "@/components/sections/airport-transfer/data";
 import { Features } from "@/components/sections/airport-transfer/Features";
 import { Hero } from "@/components/sections/airport-transfer/Hero";
 import { Pricing } from "@/components/sections/airport-transfer/Pricing";
 
-export default function AirportTransfer() {
+interface AirportTransferProps {
+  pricingPlans: PricingPlan[];
+}
+
+export default function AirportTransfer({ pricingPlans }: AirportTransferProps) {
   return (
     <>
       <SeoHead
@@ -17,7 +22,7 @@ export default function AirportTransfer() {
       <Layout>
         <Hero />
         <Features />
-        <Pricing />
+        <Pricing pricingPlans={pricingPlans} />
         <CTA />
       </Layout>
     </>
