@@ -37,7 +37,8 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
-            //
+            'siteUrl' => config('app.url'),
+            'siteName' => config('app.name'),
         ];
     }
 }

@@ -1,6 +1,6 @@
 import { Head, usePage } from "@inertiajs/react";
 
-const BASE_URL = "https://baliserenetours.com";
+const FALLBACK_BASE_URL = "https://baliserenetours.com";
 
 const DEFAULT_DESCRIPTION =
   "Bali Serene Tours – premium Bali airport transfers, daily car rentals, and guided tours.";
@@ -24,8 +24,9 @@ export function SeoHead({
   robots = "index, follow",
   jsonLd,
 }: SeoHeadProps) {
-  const { url } = usePage();
-  const pageUrl = `${BASE_URL}${url}`;
+  const { url, props } = usePage<{ siteUrl?: string }>();
+  const baseUrl = (props.siteUrl ?? FALLBACK_BASE_URL).replace(/\/$/, "");
+  const pageUrl = `${baseUrl}${url}`;
 
   return (
     <Head title={title}>

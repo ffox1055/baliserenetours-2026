@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { Car, Check, Plane } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
+import { buildWhatsAppUrl } from "@/constants/whatsapp";
 import {
   cardHover,
   fadeUp,
@@ -24,6 +25,7 @@ const services = [
     ],
     cta: "View Airport Transfer Packages",
     variant: "primary" as const,
+    whatsappMessage: "Halo, saya ingin booking airport transfer di Bali.",
   },
   {
     icon: Car,
@@ -38,6 +40,7 @@ const services = [
     ],
     cta: "View Daily Rental Options",
     variant: "outline" as const,
+    whatsappMessage: "Halo, saya ingin menyewa mobil harian di Bali.",
   },
 ];
 
@@ -84,9 +87,16 @@ export function ServiceCard() {
                     </li>
                   ))}
                 </ul>
-                <Button variant={service.variant} fullWidth>
-                  {service.cta}
-                </Button>
+                <a
+                  href={buildWhatsAppUrl(service.whatsappMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button variant={service.variant} fullWidth>
+                    {service.cta}
+                  </Button>
+                </a>
               </div>
             </motion.div>
           ))}

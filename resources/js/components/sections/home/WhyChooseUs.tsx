@@ -43,7 +43,7 @@ export function WhyChooseUs() {
                 />
               </div>
               <div className="space-y-1 sm:space-y-2 sm:pr-8 2xl:pr-12">
-                <h4 className="font-serif leading-tight">{item.title}</h4>
+                <h3 className="font-serif leading-tight">{item.title}</h3>
                 <p className="tracking-wide leading-relaxed">
                   {item.description}
                 </p>

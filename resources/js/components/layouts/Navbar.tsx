@@ -42,12 +42,6 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/book-now"
-                className="interactive-surface-hover inline-flex items-center justify-center rounded-md border border-primary bg-primary px-4 py-2 text-white shadow-sm hover:bg-primary-dark hover:border-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-beige"
-              >
-                Book Now
-              </Link>
             </div>
 
             {/* Mobile hamburger */}
@@ -105,15 +99,6 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <div className="pt-4">
-            <Link
-              href="#"
-              onClick={() => setIsOpen(false)}
-              className="interactive-surface-hover block border border-primary bg-primary px-4 py-3 rounded-md text-white text-center text-lg shadow-sm hover:bg-primary-dark hover:border-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-beige"
-            >
-              Book Now
-            </Link>
-          </div>
         </nav>
       </div>
     </>

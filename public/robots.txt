@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /storage/
+Disallow: /_boost/
+
+Sitemap: https://baliserenetours.com/sitemap.xml

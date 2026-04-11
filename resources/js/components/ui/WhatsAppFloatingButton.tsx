@@ -1,14 +1,9 @@
-const WHATSAPP_NUMBER = "628123456789";
-const DEFAULT_MESSAGE = "Halo, saya tertarik dengan layanan BALISERENE TOURS.";
-
-const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  DEFAULT_MESSAGE
-)}`;
+import { buildWhatsAppUrl } from "@/constants/whatsapp";
 
 export function WhatsAppFloatingButton() {
   return (
     <a
-      href={whatsappUrl}
+      href={buildWhatsAppUrl()}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat via WhatsApp"

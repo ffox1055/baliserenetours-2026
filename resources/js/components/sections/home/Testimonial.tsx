@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { Quote } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
+import { buildWhatsAppUrl } from "@/constants/whatsapp";
 import {
   cardHover,
   fadeUp,
@@ -62,23 +63,41 @@ export function Testimonial() {
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/5 rounded-full blur-3xl -z-10 pointer-events-none" />
             <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-white/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-            <h4 className="text-white text-3xl xl:text-4xl text-center leading-tight">
+            <h3 className="text-white text-3xl xl:text-4xl text-center leading-tight">
               Ready for a Serene Bali Experience?
-            </h4>
+            </h3>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4 w-full justify-center relative z-10"
               variants={staggerContainer(!!reducedMotion, 0.08, 0)}
             >
               <motion.div variants={staggerItem(!!reducedMotion)}>
-                <Button variant="beige" size="compact" fullWidth>
-                  Book Airport Transfer
-                </Button>
+                <a
+                  href={buildWhatsAppUrl(
+                    "Halo, saya ingin booking airport transfer di Bali.",
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button variant="beige" size="compact" fullWidth>
+                    Book Airport Transfer
+                  </Button>
+                </a>
               </motion.div>
               <motion.div variants={staggerItem(!!reducedMotion)}>
-                <Button variant="inverse" size="compact" fullWidth>
-                  Rent a Car Today
-                </Button>
+                <a
+                  href={buildWhatsAppUrl(
+                    "Halo, saya ingin menyewa mobil harian di Bali.",
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button variant="inverse" size="compact" fullWidth>
+                    Rent a Car Today
+                  </Button>
+                </a>
               </motion.div>
             </motion.div>
           </motion.div>

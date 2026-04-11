@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "motion/react";
 
 import { Button } from "@/components/ui/Button";
+import { buildWhatsAppUrl } from "@/constants/whatsapp";
 import {
   fadeUp,
   staggerContainer,
@@ -21,7 +22,7 @@ export function Hero() {
     >
       <img
         src="/images/hero-home.jpg"
-        alt=""
+        alt="Private car driving along a scenic road in Bali at sunset"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-linear-to-r from-beige/95 via-beige/85 to-beige/50 md:from-beige md:via-beige/90 md:to-beige/30" />
@@ -48,8 +49,24 @@ export function Hero() {
             className="flex gap-3"
             variants={staggerItem(!!reducedMotion)}
           >
-            <Button>Book Airport Transfer</Button>
-            <Button variant="outline">Explore Daily Car Rental</Button>
+            <a
+              href={buildWhatsAppUrl(
+                "Halo, saya ingin booking airport transfer di Bali.",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button>Book Airport Transfer</Button>
+            </a>
+            <a
+              href={buildWhatsAppUrl(
+                "Halo, saya ingin menyewa mobil harian di Bali.",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline">Explore Daily Car Rental</Button>
+            </a>
           </motion.div>
         </motion.div>
       </div>
